@@ -1,6 +1,8 @@
- {{> header }} {{> navigate_row}}
+{{>alerts this.i18n.alerts}}
 
-{{#each this}}
+{{> header }} {{> navigate_row}}
+
+{{#each this.articles}}
   {{#if title}}
     {{> food_list this}}
   {{/if}}
