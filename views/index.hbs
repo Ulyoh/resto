@@ -4,5 +4,7 @@
 {{> navigate_row}}
 
 {{#each this}}
-  {{> food_list this}}
+  {{#if title}}
+    {{> food_list this}}
+  {{/if}}
 {{/each}}
