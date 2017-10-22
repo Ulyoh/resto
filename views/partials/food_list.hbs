@@ -1,18 +1,17 @@
 <div class="container hero next">
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        <h1 class="text-center"> {{title}} </h1></th>
-                </tr>
-            </thead>
-            <tbody>
-              {{#each articles}}
-                {{> article this}}
-              {{/each}}
-
-            </tbody>
-        </table>
-    </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <h1 class="text-center"> {{title}} </h1></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each articles}}
+          {{> article this}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 </div>
