@@ -40,35 +40,58 @@ $('.article_nbr').keyup(function(event) {
 });
 
 //handle confirm reponse article alert buttons:
-function communConfirmArticle() {
+function defaultsHiddenValues() {
   $(".food_list").removeClass('hidden');
   $(".resto_header").removeClass('hidden');
-  $(".last_selected").removeClass('last_selected');
+  $('.article').addClass('hidden');
   $(".selected").removeClass('hidden');
   $(".alert_confirm_article").addClass('hidden');
   $(".resto_header").removeClass('hidden');
   $(".navigate_row").removeClass('hidden');
+
+  $(".last_selected").removeClass('last_selected');
 }
 $("#conf_article_ok").mousedown(function(e) {
-  communConfirmArticle();
+  defaultsHiddenValues();
 });
 $("#conf_article_nok").mousedown(function(e) {
   var lastSelected = $(".last_selected");
   lastSelected.removeClass('selected');
   lastSelected.find('.qty').text("0");
   lastSelected.addClass('hidden');
-  communConfirmArticle();
+  defaultsHiddenValues();
 });
 
+//choose article by food list:
+$('.food_list_title').mousedown(function(e) {
+  var that = $(e.target);
+  if (that.hasClass('current')) {
+    that.removeClass('current');
+    defaultsHiddenValues();
+  } else {
+    $('.article').removeClass('hidden');
+    that.closest('.food_list').siblings().addClass('hidden');
+    that.addClass('current');
+  }
+});
+
+
 $('.btn_more').mousedown(function(event) {
-  var qty = $(event.target).siblings('.qty');
+  var that = $(event.target);
+  var qty = that.siblings('.qty');
   var value = qty.text();
   qty.text(++value);
+  that.closest('.article').addClass('selected');
 });
 
 $('.btn_less').mousedown(function(event) {
-  var qty = $(event.target).siblings('.qty');
+  var that = $(event.target);
+  var qty = that.siblings('.qty');
   var value = qty.text();
-  if (value > 0) qty.text(--value);
-  else qty.text = 0;
+  if (value > 1) {
+    qty.text(--value);
+  } else {
+    qty.text(0);
+    that.closest('.article').removeClass('selected');
+  }
 });
