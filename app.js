@@ -12,14 +12,19 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.engine('.hbs', expressHbs({defaultLayout: 'default', extname: '.hbs'}));
+app.engine('.hbs', expressHbs({
+  defaultLayout: 'default',
+  extname: '.hbs'
+}));
 app.set('view engine', '.hbs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -27,8 +32,8 @@ app.use('/', index);
 app.use('/users', users);
 
 //statics files:
-app.get('/js/isNumberLessThan3Caracters.js',function(req,res){
-    res.sendFile(path.join(__dirname + '/js/isNumberLessThan3Caracters.js'));
+app.get('/js/isNumberLessThan3Caracters.js', function(req, res) {
+  res.sendFile(path.join(__dirname + '/js/isNumberLessThan3Caracters.js'));
 });
 
 // catch 404 and forward to error handler
