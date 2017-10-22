@@ -1,7 +1,17 @@
+<!-- ALERT INEXISTANT NUMBER -->
 <div class="alert alert-danger alert_nbr hidden">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
   <strong class"alert_nbr_value"> {{this.wrong_nbr}} </strong>
   <button type="button" class="btn btn-danger hidden">{{this.ok}}</button>
-  <button type="button" class="btn btn-default hidden">{{this.refuse}}</button>
+  <button type="button" class="btn btn-default hidden">{{this.cancel}}</button>
+  </p>
+</div>
+
+<!-- ALERT CONFIRM ARTICLE -->
+<div class="alert alert-success alert_confirm_article hidden">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+  {{this.confirm_selected_article}}
+  <button id="conf_article_ok" type="button" class="btn btn-danger">{{this.ok}}</button>
+  <button id="conf_article_nok"type="button" class="btn btn-default">{{this.supp}}</button>
   </p>
 </div>
