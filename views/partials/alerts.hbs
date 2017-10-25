@@ -1,16 +1,21 @@
 <!-- ALERT INEXISTANT NUMBER -->
 <div class="alert alert-danger alert_nbr hidden">
+  <p>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-  <strong class"alert_nbr_value"> {{this.wrong_nbr}} </strong>
+  <strong class"alert_nbr_value"> {{this.alerts_msg.wrong_nbr}} </strong>
   </p>
 </div>
 
 <!-- ALERT CONFIRM ARTICLE -->
 <div class="alert alert-success alert_confirm_article hidden">
+  <p>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-  {{this.confirm_selected_article_msg}}
-  <button id="conf_article_ok" type="button" class="btn btn-danger">{{this.ok}}</button>
-  <button id="conf_article_nok"type="button" class="btn btn-default">{{this.supp}}</button>
+  {{this.articles_related.confirm_selected_article_msg}}
+  <button id="conf_article_ok" type="button" class="btn btn-danger">{{this.alerts_msg.ok}}</button>
+  <button id="conf_article_nok"type="button" class="btn btn-default">{{this.alerts_msg.supp}}</button>
+  </p>
+</div>
+
 <!-- ALERT CONFIRM COMMAND -->
 <div class="alert alert-success alert_confirm_command hidden">
   <p>
