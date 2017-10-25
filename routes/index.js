@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var data = { articles: articles.boissons, i18n: i18n };
+  var data = { articles: articles[0].articles_groups, text: articles[0], i18n: i18n };
   res.render('index', data);
 });
 
