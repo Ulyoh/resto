@@ -11,6 +11,10 @@ var users = require('./routes/users');
 
 var app = express();
 
+var i18n = require('./data/i18n');
+
+var max_id = i18n.articles_related.length - 1;
+
 // view engine setup
 app.engine('.hbs', expressHbs({
   defaultLayout: 'default',
@@ -29,6 +33,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+
+//app.use('/[0-1]',index);
 app.use('/users', users);
 
 //statics files:

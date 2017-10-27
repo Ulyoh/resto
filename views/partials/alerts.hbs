@@ -17,10 +17,10 @@
 </div>
 
 <!-- ALERT CONFIRM COMMAND -->
-<div class="alert alert-success alert_confirm_command hidden">
+<div id="alert_confirm_command" class="alert alert-success hidden">
   <p>
   {{this.articles_related.confirm_command_msg}}
-  <button id="conf_command_ok" type="button" class="btn btn-danger">{{this.alerts_msg.ok}}</button>
-  <button id="conf_command_nok"type="button" class="btn btn-default">{{this.alerts_msg.modify}}</button>
+  <button id="conf_command_ok" type="button" class="btn btn-danger next_list_{{this.articles_related.list_next}}">{{this.alerts_msg.ok}}</button>
+  <button id="conf_command_nok" type="button" class="btn btn-default">{{this.alerts_msg.modify}}</button>
   </p>
 </div>

@@ -1,3 +1,5 @@
+
+
 //verify number entry
 $('.article_nbr').keypress(function(event) {
   var value = $(this).val();
@@ -94,4 +96,27 @@ $('.btn_less').mousedown(function(event) {
     qty.text(0);
     that.closest('.article').removeClass('selected');
   }
+});
+
+$('#btn_command_complete').mousedown(function(e) {
+  $('#alert_confirm_command').removeClass('hidden');
+});
+
+$('#conf_command_ok').mousedown(function(e) {
+  var that = $(e.target);
+
+  //extract next list number
+  var myClass = $(that).attr("class");
+  var index = myClass.indexOf("next_list_");
+
+  if (index) {
+    var next_list = myClass.charAt(index + 10);
+    window.location.href =  '/' + next_list;
+  } else {
+    //TODO: show a nice message and leave only the header menu
+  }
+});
+
+$('#conf_command_nok').mousedown(function(e) {
+  $('#alert_confirm_command').addClass('hidden');
 });
