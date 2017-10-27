@@ -6,18 +6,18 @@ module.exports = {
     supp: "supprimer",
     wrong_nbr: "ce numéro n'existe pas"
   },
-  articles_related:[
-    {
+  articles_related: [{
+      list_number: "0",
+      list_next: "1",
       list_name: "boissons",
       ask_for_number: "Entrer le numéro de la boisson:",
+      btn_command_complete: "Valider",
       ask_to_choose_by_click: "Ou cliquer ci-dessous:",
       confirm_selected_article_msg: "ajouter la boisson ci-dessous?",
       confirm_command_msg: "Confirmer vos boissons. Vous serez servi dans quelques minutes",
-      articles_groups: [
-        {
+      articles_groups: [{
           title: 'Apéritifs',
-          articles: [
-            {
+          articles: [{
               nbr: '100',
               title: 'martini rouge',
               price: '2.25'
@@ -103,6 +103,84 @@ module.exports = {
             {
               nbr: '305',
               title: 'limonade',
+              price: '2.30'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      list_number: "1",
+      list_next: "",
+      list_name: "menu",
+      ask_for_number: "Entrer le numéro du plat:",
+      ask_to_choose_by_click: "Ou cliquer ci-dessous:",
+      btn_command_complete: "Valider",
+      confirm_selected_article_msg: "ajouter l'article ci-dessous?",
+      confirm_command_msg: "Confirmer votre commande",
+      articles_groups: [{
+          title: 'Entrées',
+          articles: [{
+              nbr: '400',
+              title: 'foie gras',
+              price: '2.25'
+            },
+            {
+              nbr: '401',
+              title: 'caviar',
+              price: '2.30'
+            },
+            {
+              nbr: '405',
+              title: 'terrine de canard',
+              price: '2.30'
+            },
+            {
+              nbr: '410',
+              title: 'salade niçoise',
+              price: '2.30'
+            }
+          ]
+        },
+        {
+          title: 'Plats principaux',
+          articles: [{
+              nbr: '500',
+              title: 'coq au vin',
+              price: '2.25'
+            },
+            {
+              nbr: '501',
+              title: 'moules mariniéres',
+              price: '2.30'
+            },
+            {
+              nbr: '521',
+              title: 'omellette aux pommes de terres',
+              price: '2.30'
+            },
+            {
+              nbr: '522',
+              title: 'diots au vin blanc',
+              price: '2.30'
+            }
+          ]
+        },
+        {
+          title: 'Fromages et desserts',
+          articles: [{
+              nbr: '600',
+              title: 'plats de fromage',
+              price: '2.25'
+            },
+            {
+              nbr: '601',
+              title: 'tarte tatin',
+              price: '2.30'
+            },
+            {
+              nbr: '620',
+              title: 'coupe de glace',
               price: '2.30'
             }
           ]
