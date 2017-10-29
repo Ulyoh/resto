@@ -1,0 +1,17 @@
+<div class="container hero next food_list">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <h1 class="text-center food_list_title"> {{table_nbr}} </h1></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each orders}}
+          {{> order_article this}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
