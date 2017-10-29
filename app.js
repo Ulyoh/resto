@@ -34,9 +34,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 
-//app.use('/[0-1]',index);
-app.use('/users', users);
-
 //statics files:
 app.get('/js/isNumberLessThan3Caracters.js', function(req, res) {
   res.sendFile(path.join(__dirname + '/js/isNumberLessThan3Caracters.js'));
