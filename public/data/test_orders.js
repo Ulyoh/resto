@@ -1,4 +1,5 @@
-module.exports = [{
+Orders = {};
+Orders.orders = [{
   table_nbr: '100',
   orders: [{
     list_name: 'boissons',
