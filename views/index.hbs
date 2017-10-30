@@ -1,9 +1,10 @@
-{{>alerts this}}
+{{> index_90_alerts this}}
 
-{{> header }} {{> navigate_row this.articles_related}}
+{{> index_00_header }}
+{{> index_20_navigate_row this.articles_related}}
 
 {{#each this.articles_related.articles_groups}}
   {{#if title}}
-    {{> food_list this}}
+    {{> index_40_food_list this}}
   {{/if}}
 {{/each}}

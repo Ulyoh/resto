@@ -3,13 +3,13 @@ function init() {
 
   //get all hbs partials:
   $.when(
-    $.get("/hbs/orders.hbs", function(hbs) {
+    $.get("/hbs/orders_00.hbs", function(hbs) {
       template = hbs;
     }),
-    $.get("/hbs/order_table.hbs", function(hbs) {
+    $.get("/hbs/orders_30_table.hbs", function(hbs) {
       Handlebars.registerPartial('order_table', hbs);
     }),
-    $.get("/hbs/order_article.hbs", function(hbs) {
+    $.get("/hbs/orders_60_article.hbs", function(hbs) {
       Handlebars.registerPartial('order_article', hbs);
     }),
     $.Deferred(function(deferred) {
