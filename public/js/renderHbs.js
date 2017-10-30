@@ -23,11 +23,14 @@ function init() {
     var html = templateScript(Orders.orders);
 
     // Insert the HTML code into the page
-    $(document.body).append(html);
+    $('#order_list').append(html);
   });
 }
 
 //init function
 $(document).ready(function() {
   init();
+  $('.dropdown-menu').click(function(e) {
+    e.stopPropagation();
+  });
 });

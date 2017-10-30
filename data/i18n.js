@@ -6,6 +6,9 @@ module.exports = {
     supp: "supprimer",
     wrong_nbr: "ce numéro n'existe pas"
   },
+  txt: {
+    filter: 'filtre',
+  },
   articles_related: [{
       list_number: "0",
       list_next: "1",

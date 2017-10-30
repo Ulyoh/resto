@@ -1,0 +1,24 @@
+<div class="header-blue resto_header" style="height:80px;">
+  <nav class="navbar navbar-default navigation-clean-search">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> {{this.txt.filter}} <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              {{#each articles_related}}
+                <li class="dropdown-header" role="presentation">
+                  {{this.list_name}}
+                </li>
+                {{#each this.articles_groups}}
+                  <li role="presentation">
+                    <input type="checkbox" aria-label="..."> {{this.title}}
+                  </li>
+                {{/each}}
+              {{/each}}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
