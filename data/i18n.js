@@ -20,6 +20,7 @@ module.exports = {
       confirm_command_msg: "Confirmer vos boissons. Vous serez servi dans quelques minutes",
       articles_groups: [{
           title: 'Apéritifs',
+          group_nbr: '10',
           articles: [{
               nbr: '100',
               title: 'martini rouge',
@@ -54,6 +55,7 @@ module.exports = {
         },
         {
           title: 'Vins',
+          group_nbr: '15',
           articles: [{
               nbr: '200',
               title: 'verre de vin rouge',
@@ -83,6 +85,7 @@ module.exports = {
         },
         {
           title: 'Sans Alcool',
+          group_nbr: '20',
           articles: [{
               nbr: '300',
               title: 'thé vert',
@@ -123,6 +126,7 @@ module.exports = {
       confirm_command_msg: "Confirmer votre commande",
       articles_groups: [{
           title: 'Entrées',
+          group_nbr: '30',
           articles: [{
               nbr: '400',
               title: 'foie gras',
@@ -147,6 +151,7 @@ module.exports = {
         },
         {
           title: 'Plats principaux',
+          group_nbr: '50',
           articles: [{
               nbr: '500',
               title: 'coq au vin',
@@ -171,6 +176,7 @@ module.exports = {
         },
         {
           title: 'Fromages et desserts',
+          group_nbr: '70',
           articles: [{
               nbr: '600',
               title: 'plats de fromage',
