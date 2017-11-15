@@ -1,16 +1,14 @@
 import React, {
   Component
 } from 'react';
+import i18n from './data/i18n.js';
 
 class MyHeader extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: 'filter',
-      articles_related: 'each articles_related',
-      list_name: 'list_name',
-      articles_groups: 'each articles_groups',
-      title: 'title',
+      filter: i18n.txt.filter,
+      articles_related: i18n.articles_related,
     };
   }
 
@@ -22,15 +20,21 @@ class MyHeader extends Component {
             <div class="collapse navbar-collapse" id="navcol-1">
               <ul class="nav navbar-nav">
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> {this.state.filter} <span class="caret"></span></a>
+
                   <ul class="dropdown-menu" role="menu">
-                    {this.state.articles_related}
-                      <li class="dropdown-header" role="presentation">
-                        {this.state.list_name}
+                  {this.state.articles_related.map((article) =>
+                    <div>
+                    <li class="dropdown-header" role="presentation">
+                      {article.list_name}
+                    </li>
+                    {article.articles_groups.map((group) =>
+                      <li role="presentation">
+                        <input type="checkbox" aria-label="..." />
+                        {group.title}
                       </li>
-                        {this.state.articles_groups}
-                        <li role="presentation">
-                          <input type="checkbox" aria-label="..." /> {this.state.title}
-                        </li>
+                    )}
+                    </div>
+                  )}
                   </ul>
                 </li>
               </ul>
