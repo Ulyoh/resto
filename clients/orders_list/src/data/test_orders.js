@@ -1,4 +1,4 @@
-var Orders = [{
+var OrdersList = [{
   table_nbr: '100',
   orders: [{
     list_name: 'boissons',
@@ -25,15 +25,6 @@ var Orders = [{
     article_title: 'porto',
     article_nbr: '101',
     qty: '5',
-    ready: '',
-    delivered: ''
-  }, {
-    list_name: 'boissons',
-    group: 'Apéritifs',
-    group_nbr: '10',
-    article_title: 'martini rouge',
-    article_nbr: '100',
-    qty: '1',
     ready: '',
     delivered: ''
   }, {
@@ -76,15 +67,6 @@ var Orders = [{
     list_name: 'menu',
     group: 'Fromages et desserts',
     group_nbr: '70',
-    article_title: 'martini rouge',
-    article_nbr: '100',
-    qty: '1',
-    ready: '',
-    delivered: ''
-  }, {
-    list_name: 'menu',
-    group: 'Fromages et desserts',
-    group_nbr: '70',
     article_title: 'coupe de glace',
     article_nbr: '620',
     qty: '1',
@@ -120,15 +102,6 @@ var Orders = [{
     article_title: 'porto',
     article_nbr: '101',
     qty: '5',
-    ready: '',
-    delivered: ''
-  }, {
-    list_name: 'boissons',
-    group: 'Apéritifs',
-    group_nbr: '10',
-    article_title: 'martini rouge',
-    article_nbr: '100',
-    qty: '1',
     ready: '',
     delivered: ''
   }, {
@@ -206,4 +179,4 @@ var Orders = [{
   }]
 }]
 
-export default Orders;
+export default OrdersList;

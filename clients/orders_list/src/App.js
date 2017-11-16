@@ -3,19 +3,24 @@ import React, {
 } from 'react';
 import './App.css';
 import MyHeader from './MyHeader';
+import Orders from './Orders_00.js';
 
 //TODO: remove:
-import Orders from './test_orders.js'
+import OrdersList from './data/test_orders.js'
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {orders_list: OrdersList};
+  }
   render() {
     return (
       <div>
-        <div class = "container" >
+        <div className = "container" >
           <MyHeader />
         </div>
-        <div id = "order_list"
-        class = "container" >
+        <div className = "container" >
+          <Orders orders_list={this.state.orders_list} />
         </div>
       </div>
     );
@@ -23,19 +28,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-<
-div class = "container" > {
-  {
-    {
-      body
-    }
-  }
-} <
-/div> <
-div id = "order_list"
-class = "container" >
-<
-/div>
-*/
