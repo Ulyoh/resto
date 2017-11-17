@@ -6,7 +6,7 @@ class Orders extends Component {
     return(
       <div>
       {this.props.orders_list.map((table) =>
-        <OrdersTable key={table.table_nbr} table={table} />)}
+        <OrdersTable key={table.table_nbr} table={table} filter={this.props.filter} />)}
       </div>
     )
   }

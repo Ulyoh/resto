@@ -4,6 +4,7 @@ import OrdersArticle from './Orders_60_article.js'
 class OrdersTable extends Component {
   render() {
     var table = this.props.table;
+    var filter = this.props.filter;
     return(
       <div className="container hero next food_list">
         <div className="table-responsive">
@@ -16,6 +17,7 @@ class OrdersTable extends Component {
             </thead>
             <tbody>
               {table.orders.map((order) =>
+                filter[order.group_nbr].show &&
                 <OrdersArticle key={'' + table.table_nbr + order.article_nbr} order={order} table_nbr={table.table_nbr} />
               )}
             </tbody>
