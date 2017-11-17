@@ -8,7 +8,9 @@ var OrdersList = [{
     article_nbr: '100',
     qty: '2',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'boissons',
     group: 'Vins',
@@ -17,7 +19,9 @@ var OrdersList = [{
     article_nbr: '220',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'boissons',
     group: 'Apéritifs',
@@ -26,7 +30,9 @@ var OrdersList = [{
     article_nbr: '101',
     qty: '5',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -35,7 +41,9 @@ var OrdersList = [{
     article_nbr: '500',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -44,7 +52,9 @@ var OrdersList = [{
     article_nbr: '501',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -53,7 +63,9 @@ var OrdersList = [{
     article_nbr: '522',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -62,7 +74,9 @@ var OrdersList = [{
     article_nbr: '601',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 20,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -71,11 +85,14 @@ var OrdersList = [{
     article_nbr: '620',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 20,
   }]
 
 }, {
   table_nbr: '102',
+  firstOrderTime: 5,
   orders: [{
     list_name: 'boissons',
     group: 'Apéritifs',
@@ -84,7 +101,9 @@ var OrdersList = [{
     article_nbr: '100',
     qty: '2',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'boissons',
     group: 'Vins',
@@ -93,7 +112,9 @@ var OrdersList = [{
     article_nbr: '220',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
 
     list_name: 'boissons',
@@ -103,7 +124,9 @@ var OrdersList = [{
     article_nbr: '101',
     qty: '5',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'menu',
     group: 'Entrées',
@@ -112,7 +135,9 @@ var OrdersList = [{
     article_nbr: '400',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'menu',
     group: 'Entrées',
@@ -121,7 +146,9 @@ var OrdersList = [{
     article_nbr: '401',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -130,7 +157,9 @@ var OrdersList = [{
     article_nbr: '501',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -139,7 +168,9 @@ var OrdersList = [{
     article_nbr: '521',
     qty: '3',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -148,7 +179,9 @@ var OrdersList = [{
     article_nbr: '522',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -157,7 +190,9 @@ var OrdersList = [{
     article_nbr: '620',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -166,7 +201,9 @@ var OrdersList = [{
     article_nbr: '601',
     qty: '3',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 20,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -175,7 +212,9 @@ var OrdersList = [{
     article_nbr: '600',
     qty: '1',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 20,
   }]
 }]
 
