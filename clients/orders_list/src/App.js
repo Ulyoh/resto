@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import MyHeader from './MyHeader';
 import Orders from './Orders_00.js';
@@ -9,12 +7,12 @@ import Orders from './Orders_00.js';
 import OrdersList from './data/test_orders.js'
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {orders_list: OrdersList};
+    this.state = { orders_list: OrdersList };
   }
   render() {
-    return (
+    return(
       <div>
         <div className = "container" >
           <MyHeader />

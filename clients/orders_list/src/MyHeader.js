@@ -13,7 +13,7 @@ class MyHeader extends Component {
   }
 
   render() {
-      return(
+    return(
       <div className="header-blue resto_header" style={{height:80 + 'px'}}>
         <nav className="navbar navbar-default navigation-clean-search">
           <div className="container">

@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import OrdersArticle from './Orders_60_article.js'
 
-class OrdersTable extends Component{
-  render(){
+class OrdersTable extends Component {
+  render() {
     var table = this.props.table;
     return(
       <div className="container hero next food_list">
