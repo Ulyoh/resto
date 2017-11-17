@@ -8,6 +8,7 @@ module.exports = {
   },
   txt: {
     filter: 'filtre',
+    noOrders: 'pas de commandes en cours',
   },
   articles_related: [{
       list_number: "0",
