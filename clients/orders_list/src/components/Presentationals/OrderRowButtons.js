@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button';
-import i18n from '../../data/i18n.js';
+import i18n from '../../data/i18n';
 
 const OrderRowButtons = ({ allPrepared, disabledWhenAllPrepared, onePrepared, oneNotAlreadyPrepared, disabledWhenNonePrepared }) =>
 

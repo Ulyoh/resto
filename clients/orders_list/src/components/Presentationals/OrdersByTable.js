@@ -1,5 +1,5 @@
 import React from 'react'
-import OrdersArticle from '../Containers/OrderRowContainer.js'
+import OrdersRowContainer from '../Containers/OrderRowContainer'
 
 const OrdersByTable = ({ table }) =>
 
@@ -15,7 +15,7 @@ const OrdersByTable = ({ table }) =>
         <tbody>
           {table.orders.map((order) =>
             order.show &&
-              <OrdersArticle key={'' + table.table_nbr + order.article_nbr} order={order} table_nbr={table.table_nbr} />
+              <OrdersRowContainer key={'' + table.table_nbr + order.article_nbr} order={order} table_nbr={table.table_nbr} />
           )}
         </tbody>
       </table>

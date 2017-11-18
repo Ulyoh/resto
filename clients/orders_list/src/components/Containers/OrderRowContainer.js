@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import OrderRow from '../Presentationals/OrderRow.jsx'
+import OrderRow from '../Presentationals/OrderRow'
 
-class OrdersArticle extends Component {
+class OrdersRowContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -14,7 +14,6 @@ class OrdersArticle extends Component {
       toBePrepared: this.props.order.toBePrepared,
       prepared: this.props.order.prepared,
     };
-    console.log(this.state);
   }
 
   allPrepared() {
@@ -67,4 +66,4 @@ class OrdersArticle extends Component {
   }
 }
 
-export default OrdersArticle;
+export default OrdersRowContainer;

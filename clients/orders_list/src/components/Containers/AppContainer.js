@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
-import MyHeader from './MyHeader';
-import OrdersAll from './components/Presentationals/OrdersAll.js';
-import i18n from './data/i18n.js';
+import App from '../Presentationals/App'
 
 //TODO: remove:
-import ordersList from './data/test_orders.js'
-import filter from './data/orders_config_filter_default.js'
+import ordersList from '../../data/test_orders'
+import filter from '../../data/orders_config_filter_default'
 
-class App extends Component {
+class AppContainer extends Component {
   constructor(props) {
     super(props);
     var ordersListSetted = this.setShowValues(ordersList, filter);
@@ -62,18 +59,15 @@ class App extends Component {
   }
 
   render() {
+    const childrenProps = {
+      filter: filter,
+      handleCheckedBoxChange: this.handleCheckedBoxChange,
+      ordersList: this.state.ordersList,
+    }
     return(
-      <div>
-        <div className = "container" >
-          <MyHeader filter={filter}  handleCheckedBoxChange={this.handleCheckedBoxChange}/>
-        </div>
-        <div className = "container" >
-          {this.state.ordersList.show ?
-            (<OrdersAll ordersList={this.state.ordersList} />) : i18n.txt.noOrders}
-        </div>
-      </div>
+      <App {...childrenProps}/>
     );
   }
 }
 
-export default App;
+export default AppContainer;

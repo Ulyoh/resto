@@ -1,5 +1,5 @@
 import React from 'react';
-import OrderRowButtons from './OrderRowButtons.jsx';
+import OrderRowButtons from './OrderRowButtons';
 
 const OrderRow = ({ id, className, prepared, toBePrepared, group, article_title, buttonsProps }) =>
 

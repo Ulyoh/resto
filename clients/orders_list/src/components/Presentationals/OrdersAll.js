@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import OrdersByTable from './OrdersByTable.js'
+import OrdersByTable from './OrdersByTable'
 
 class OrdersAll extends Component {
   render() {
