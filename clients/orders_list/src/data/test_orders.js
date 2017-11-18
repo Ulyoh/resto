@@ -9,7 +9,9 @@ var OrdersList = [{
     toBePrepared: '2',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'boissons',
     group: 'Vins',
@@ -19,7 +21,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'boissons',
     group: 'Apéritifs',
@@ -29,7 +33,9 @@ var OrdersList = [{
     toBePrepared: '5',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -39,7 +45,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -49,7 +57,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -59,7 +69,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -69,7 +81,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 20,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -79,11 +93,14 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 0,
+    delayToStartToPrepare: 20,
   }]
 
 }, {
   table_nbr: '102',
+  firstOrderTime: 5,
   orders: [{
     list_name: 'boissons',
     group: 'Apéritifs',
@@ -93,7 +110,9 @@ var OrdersList = [{
     toBePrepared: '2',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'boissons',
     group: 'Vins',
@@ -103,7 +122,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
 
     list_name: 'boissons',
@@ -114,7 +135,9 @@ var OrdersList = [{
     toBePrepared: '5',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'menu',
     group: 'Entrées',
@@ -124,7 +147,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'menu',
     group: 'Entrées',
@@ -134,7 +159,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 0,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -144,7 +171,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -154,7 +183,9 @@ var OrdersList = [{
     toBePrepared: '3',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Plats principaux',
@@ -164,7 +195,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -174,7 +207,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 5,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -184,7 +219,9 @@ var OrdersList = [{
     toBePrepared: '3',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 20,
   }, {
     list_name: 'menu',
     group: 'Fromages et desserts',
@@ -194,7 +231,9 @@ var OrdersList = [{
     toBePrepared: '1',
     prepared: '0',
     ready: '',
-    delivered: ''
+    delivered: '',
+    orderTime: 10,
+    delayToStartToPrepare: 20,
   }]
 }]
 
