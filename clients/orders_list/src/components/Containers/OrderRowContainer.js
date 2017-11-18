@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import i18n from './data/i18n.js';
+import OrderRow from '../Presentationals/OrderRow.jsx'
 
 class OrdersArticle extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class OrdersArticle extends Component {
       toBePrepared: this.props.order.toBePrepared,
       prepared: this.props.order.prepared,
     };
+    console.log(this.state);
   }
 
   allPrepared() {
@@ -44,22 +45,25 @@ class OrdersArticle extends Component {
     const TrClassName = "article " + (this.state.allPrepared ? "success" : "");
     const disabledWhenNonePrepared = this.state.prepared <= 0 ? "disabled" : false;
 
-    return(
-      <tr id={'' + this.props.table_nbr + order.article_nbr} className={ TrClassName }>
-          <td>
-            <span className="toBePrepared"> {this.state.prepared + '/' + order.toBePrepared} </span>
-            <span className="money"> </span>
-            <span style={{margin: '7px'}} > {order.group} </span>
-            <span style={{margin: '7px'}} > {order.article_title} </span>
+    const buttonsProps = {
+      allPrepared: this.allPrepared,
+      onePrepared: this.onePrepared,
+      oneNotAlreadyPrepared: this.oneNotAlreadyPrepared,
+      disabledWhenAllPrepared: disabledWhenAllPrepared,
+      disabledWhenNonePrepared: disabledWhenNonePrepared,
+    }
 
-            <button onClick={this.allPrepared} className="btn btn-default btn_less btn_change_toBePrepared" type="button" disabled={disabledWhenAllPrepared} > {i18n.txt.prepared} </button>
+    const childrenProps = {
+      id: '' + this.props.table_nbr + order.article_nbr,
+      className: TrClassName,
+      prepared: this.state.prepared,
+      toBePrepared: order.toBePrepared,
+      group: order.group,
+      article_title: order.article_title,
+      buttonsProps: buttonsProps,
+    }
 
-            <button onClick={this.onePrepared} className="btn btn-default btn_less btn_change_toBePrepared" type="button" disabled={disabledWhenAllPrepared}> + </button>
-
-            <button onClick={this.oneNotAlreadyPrepared} className="btn btn-default btn_less btn_change_toBePrepared" type="button" disabled={disabledWhenNonePrepared}> - </button>
-          </td>
-        </tr>
-    );
+    return(<OrderRow {...childrenProps}/>);
   }
 }
 
