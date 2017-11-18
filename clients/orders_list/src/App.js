@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MyHeader from './MyHeader';
-import Orders from './Orders_00.js';
+import OrdersAll from './components/Presentationals/OrdersAll.js';
 import i18n from './data/i18n.js';
 
 //TODO: remove:
@@ -69,7 +69,7 @@ class App extends Component {
         </div>
         <div className = "container" >
           {this.state.ordersList.show ?
-            (<Orders ordersList={this.state.ordersList} />) : i18n.txt.noOrders}
+            (<OrdersAll ordersList={this.state.ordersList} />) : i18n.txt.noOrders}
         </div>
       </div>
     );
