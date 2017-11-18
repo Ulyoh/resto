@@ -9,6 +9,7 @@ module.exports = {
   txt: {
     filter: 'filtre',
     noOrders: 'pas de commandes en cours',
+    prepared: 'prêt',
   },
   articles_related: [{
       list_number: "0",
