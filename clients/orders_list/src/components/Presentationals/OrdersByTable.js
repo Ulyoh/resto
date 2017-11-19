@@ -14,8 +14,7 @@ const OrdersByTable = ({ table }) =>
         </thead>
         <tbody>
           {table.orders.map((order) =>
-            order.show &&
-              <OrdersRowContainer key={'' + table.table_nbr + order.article_nbr} order={order} table_nbr={table.table_nbr} />
+            order.show && <OrdersRowContainer key={'' + table.table_nbr + order.article_nbr} order={order} table_nbr={table.table_nbr} />
           )}
         </tbody>
       </table>

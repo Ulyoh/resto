@@ -1,14 +1,10 @@
 import React from 'react'
-import FilterCheckbox from './FilterCheckbox'
 
-const FilterCheckboxLine = ({ title, hCBC, group_nbr, filter }) =>
+const FilterCheckboxLine = ({ title, hCBC, group_nbr, toShow }) =>
 
   <li role="presentation">
-    <FilterCheckbox
-      hCBC = {hCBC}
-      group_nbr = {group_nbr}
-      filter = {filter}
-    />
+    {/*hCBC : handleCheckedBoxChange*/}
+    <input onChange = {() => { hCBC(group_nbr) } } type="checkbox" aria-label="..." defaultChecked={toShow}/>
     {title}
   </li>
 

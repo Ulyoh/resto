@@ -18,7 +18,7 @@ const MyHeaderCheckBoxList = ({ filter, handleCheckedBoxChange }) =>
             title = {group.title}
             hCBC = {handleCheckedBoxChange}
             group_nbr = {group.group_nbr}
-            filter = {filter}
+            toShow = {filter[group.group_nbr].show}
           />
         )}
         {/* end for each article */}
@@ -26,9 +26,19 @@ const MyHeaderCheckBoxList = ({ filter, handleCheckedBoxChange }) =>
     )}
     {/* end for list of articles */}
     <li role="separator" className="divider"></li>
-    {/* filtre by article served or not */}
     <li className="dropdown-header" role="presentation"> </li>
+    {/* filtres by article served or not */}
+    {Object.keys(filter).map((group_nbr) =>
 
+      (group_nbr >= 1000) && <FilterCheckboxLine
+        key = {filter[group_nbr].title}
+        title = {filter[group_nbr].title}
+        hCBC = {handleCheckedBoxChange}
+        group_nbr = {group_nbr}
+        toShow = {filter[group_nbr].show}
+                             />
+
+    )}
   </ul>
 
 export default MyHeaderCheckBoxList

@@ -11,29 +11,29 @@ class OrdersRowContainer extends Component {
 
     this.state = {
       allPrepared: false,
-      toBePrepared: this.props.order.toBePrepared,
-      prepared: this.props.order.prepared,
+      toDo: this.props.order.toDo,
+      done: this.props.order.done,
     };
   }
 
   allPrepared() {
-    const newState = Object.assign(this.state, { allPrepared: true, prepared: this.state.toBePrepared + '' });
+    const newState = Object.assign(this.state, { allPrepared: true, done: this.state.toDo + '' });
 
     this.setState(newState);
   };
 
   onePrepared() {
-    const prepared = +this.state.prepared < +this.state.toBePrepared ? +this.state.prepared + 1 : +this.state.toBePrepared;
-    const allPrepared = (prepared >= this.state.toBePrepared);
-    const newState = Object.assign(this.state, { allPrepared: allPrepared, prepared: prepared + '' });
+    const done = +this.state.done < +this.state.toDo ? +this.state.done + 1 : +this.state.toDo;
+    const allPrepared = (done >= this.state.toDo);
+    const newState = Object.assign(this.state, { allPrepared: allPrepared, done: done + '' });
 
     this.setState(newState);
   };
 
   oneNotAlreadyPrepared() {
-    const prepared = +this.state.prepared > 0 ? +this.state.prepared - 1 : 0;
+    const done = +this.state.done > 0 ? +this.state.done - 1 : 0;
     const allPrepared = false;
-    const newState = Object.assign(this.state, { allPrepared: allPrepared, prepared: prepared + '' });
+    const newState = Object.assign(this.state, { allPrepared: allPrepared, done: done + '' });
 
     this.setState(newState);
   };
@@ -42,7 +42,7 @@ class OrdersRowContainer extends Component {
     const order = this.props.order;
     const disabledWhenAllPrepared = this.state.allPrepared ? "disabled" : false;
     const TrClassName = "article " + (this.state.allPrepared ? "success" : "");
-    const disabledWhenNonePrepared = this.state.prepared <= 0 ? "disabled" : false;
+    const disabledWhenNonePrepared = this.state.done <= 0 ? "disabled" : false;
 
     const buttonsProps = {
       allPrepared: this.allPrepared,
@@ -55,8 +55,8 @@ class OrdersRowContainer extends Component {
     const childrenProps = {
       id: '' + this.props.table_nbr + order.article_nbr,
       className: TrClassName,
-      prepared: this.state.prepared,
-      toBePrepared: order.toBePrepared,
+      done: this.state.done,
+      toDo: order.toDo,
       group: order.group,
       article_title: order.article_title,
       buttonsProps: buttonsProps,

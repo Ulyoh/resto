@@ -34,11 +34,31 @@ class AppContainer extends Component {
     newOrdersList = newOrdersList.map(table => {
       table.show = false;
       table.orders.map(order => {
-        order.show = filter[order.group_nbr].show;
+        order.show = true;
+
+        //filtred by delivered
+        if(!filter[1000].show && order.delivered)
+          order.show = false;
+
+        //filtred by prepared
+        else if(!filter[1001].show && order.prepared)
+          order.show = false;
+
+        //filtred by to do now
+        else if(!filter[1002].show && order.preparing)
+          order.show = false;
+
+        //filtred by to do later
+        else if(!filter[1003].show && (!order.delivered && !order.prepared && !order.preparing))
+          order.show = false;
+
+        order.show = order.show && filter[order.group_nbr].show;
+
         showTable |= order.show;
         showOrdersList |= showTable;
         return order;
       })
+
       table.show = showTable;
       showTable = false;
       return table;
