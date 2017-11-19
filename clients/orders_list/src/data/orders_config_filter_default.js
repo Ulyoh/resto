@@ -28,7 +28,27 @@ var configFilter = {
     title: 'Fromages et desserts',
     group_nbr: '70',
     show: true
-  }
+  },
+  1000: {
+    title: 'servi',
+    group_nbr: '1000',
+    show: true
+  },
+  1001: {
+    title: 'préparé',
+    group_nbr: '1001',
+    show: true
+  },
+  1002: {
+    title: 'à préparer',
+    group_nbr: '1002',
+    show: true
+  },
+  1003: {
+    title: 'à préparer plus tard',
+    group_nbr: '1003',
+    show: true
+  },
 }
 
 export default configFilter;
