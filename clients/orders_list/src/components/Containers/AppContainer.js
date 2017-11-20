@@ -1,63 +1,55 @@
 import React, { Component } from 'react';
-import App from '../Presentationals/App'
+import App from '../Presentationals/App';
 
-//TODO: remove:
-import ordersList from '../../data/test_orders'
-import filter from '../../data/orders_config_filter_default'
+// TODO:0 remove:
+import initOrdersList from '../../data/test_orders';
+import initFilter from '../../data/orders_config_filter_default';
 
 class AppContainer extends Component {
   constructor(props) {
     super(props);
-    var ordersListSetted = this.setShowValues(ordersList, filter);
+
+    // init the state:
+    this.state = this.updateState(initFilter, initOrdersList);
 
     this.handleCheckedBoxChange = this.handleCheckedBoxChange.bind(this);
-    this.setShowValues = this.setShowValues.bind(this);
+    this.updateState = this.updateState.bind(this);
     this.setNewFilter = this.setNewFilter.bind(this);
-
-    this.state = {
-      filter: filter,
-      ordersList: ordersListSetted,
-    }
   }
 
-  setNewFilter(group_nbr) {
+  setNewFilter(groupNbr) {
     const newFilter = this.state.filter;
-    newFilter[group_nbr].show = !this.state.filter[group_nbr].show;
+    newFilter[groupNbr].show = !this.state.filter[groupNbr].show;
     return newFilter;
   }
 
-  setShowValues(currentOrderList, filter) {
-    var newOrdersList = currentOrderList;
-    var showTable = false,
-      showOrdersList = false;
+  updateState(filter = this.state.filter, currentOrdersList = this.state.ordersList) {
+    let newOrdersList = currentOrdersList;
+    let showTable = false;
+    let showOrdersList = false;
 
-    newOrdersList = newOrdersList.map(table => {
+    newOrdersList = newOrdersList.map((table) => {
       table.show = false;
-      table.orders.map(order => {
+      table.orders.map((order) => {
         order.show = true;
 
-        //filtred by delivered
-        if(!filter[1000].show && order.delivered)
-          order.show = false;
+        if (!filter[1000].show && order.delivered) {
+          order.show = false; // filtred by delivered
+        } else if (!filter[1001].show && order.prepared) {
+          order.show = false; // filtred by prepared
+        } else if (!filter[1002].show && order.preparing) {
+          order.show = false;// filtred by to do now
+        } else if (!filter[1003].show &&
+          (!order.delivered && !order.prepared && !order.preparing)) {
+          order.show = false;// filtred by to do later
+        }
 
-        //filtred by prepared
-        else if(!filter[1001].show && order.prepared)
-          order.show = false;
+        order.show = order.show && filter[order.groupNbr].show;
 
-        //filtred by to do now
-        else if(!filter[1002].show && order.preparing)
-          order.show = false;
-
-        //filtred by to do later
-        else if(!filter[1003].show && (!order.delivered && !order.prepared && !order.preparing))
-          order.show = false;
-
-        order.show = order.show && filter[order.group_nbr].show;
-
-        showTable |= order.show;
-        showOrdersList |= showTable;
+        showTable = showTable || order.show;
+        showOrdersList = showOrdersList || showTable;
         return order;
-      })
+      });
 
       table.show = showTable;
       showTable = false;
@@ -65,27 +57,27 @@ class AppContainer extends Component {
     });
     newOrdersList.show = showOrdersList;
 
-    return newOrdersList;
+
+    return {
+      filter,
+      ordersList: newOrdersList,
+    };
   }
 
-  handleCheckedBoxChange(group_nbr) {
-    const newFilter = this.setNewFilter(group_nbr);
-    const newOrdersList = this.setShowValues(ordersList, newFilter);
+  handleCheckedBoxChange(groupNbr) {
+    const newFilter = this.setNewFilter(groupNbr);
 
-    this.setState({
-      filter: newFilter,
-      ordersList: newOrdersList,
-    });
+    this.setState(this.updateState(newFilter));
   }
 
   render() {
     const childrenProps = {
-      filter: filter,
+      filter: this.state.filter,
       handleCheckedBoxChange: this.handleCheckedBoxChange,
       ordersList: this.state.ordersList,
-    }
-    return(
-      <App {...childrenProps}/>
+    };
+    return (
+      <App {...childrenProps} />
     );
   }
 }

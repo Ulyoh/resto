@@ -113,7 +113,7 @@ $('#conf_command_ok').mousedown(function(e) {
     var next_list = myClass.charAt(index + 10);
     window.location.href =  '/' + next_list;
   } else {
-    //TODO: show a nice message and leave only the header menu
+    //TODO:20 show a nice message and leave only the header menu
   }
 });
 
