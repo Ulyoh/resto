@@ -2,15 +2,20 @@ import React, { Component } from 'react';
 import App from '../Presentationals/App';
 
 // TODO:0 remove:
-import initOrdersList from '../../data/test_orders';
+import initOrdersList from '../../data/initState';
 import initFilter from '../../data/orders_config_filter_default';
+import { status } from '../../data/constants';
 
 class AppContainer extends Component {
   constructor(props) {
     super(props);
 
     // init the state:
-    this.state = this.updateState(initFilter, initOrdersList);
+    this.state = {
+      filter: initFilter,
+      ordersList: initOrdersList,
+    };
+    // this.updateState(initFilter, initOrdersList);
 
     this.handleCheckedBoxChange = this.handleCheckedBoxChange.bind(this);
     this.updateState = this.updateState.bind(this);
@@ -26,28 +31,31 @@ class AppContainer extends Component {
   updateState(filter = this.state.filter, currentOrdersList = this.state.ordersList) {
     let newOrdersList = currentOrdersList;
     let showTable = false;
-    let showOrdersList = false;
+    let showOrder;
 
     newOrdersList = newOrdersList.map((table) => {
       table.show = false;
-      table.orders.map((order) => {
-        order.show = true;
 
-        if (!filter[1000].show && order.delivered) {
-          order.show = false; // filtred by delivered
-        } else if (!filter[1001].show && order.prepared) {
-          order.show = false; // filtred by prepared
-        } else if (!filter[1002].show && order.preparing) {
-          order.show = false;// filtred by to do now
-        } else if (!filter[1003].show &&
-          (!order.delivered && !order.prepared && !order.preparing)) {
-          order.show = false;// filtred by to do later
+      table.orders.map((order) => {
+        showOrder = true;
+        switch (order.status) {
+          case status.ORDERED:
+            showOrder = filter[1003].show;
+            break;
+          case status.PREPARING:
+            showOrder = filter[1002].show;
+            break;
+          case status.PREPARED:
+            showOrder = filter[1001].show;
+            break;
+          case status.DELIVERED:
+            showOrder = filter[1000].show;
+            break;
+          default:
         }
 
-        order.show = order.show && filter[order.groupNbr].show;
-
+        order.show = showOrder && filter[order.groupNbr].show;
         showTable = showTable || order.show;
-        showOrdersList = showOrdersList || showTable;
         return order;
       });
 
@@ -55,8 +63,6 @@ class AppContainer extends Component {
       showTable = false;
       return table;
     });
-    newOrdersList.show = showOrdersList;
-
 
     return {
       filter,
@@ -71,10 +77,13 @@ class AppContainer extends Component {
   }
 
   render() {
+    const showOrdersList = this.state.ordersList.reduce((pre, cur) => (pre && cur.show), true);
+
     const childrenProps = {
       filter: this.state.filter,
       handleCheckedBoxChange: this.handleCheckedBoxChange,
       ordersList: this.state.ordersList,
+      showOrdersList,
     };
     return (
       <App {...childrenProps} />

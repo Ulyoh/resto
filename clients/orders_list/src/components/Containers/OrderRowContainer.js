@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OrderRow from '../Presentationals/OrderRow';
+import i18n from '../../data/i18n';
 
 class OrdersRowContainer extends Component {
   constructor(props) {
@@ -57,8 +58,8 @@ class OrdersRowContainer extends Component {
       className: TrClassName,
       done: this.state.done,
       toDo: order.toDo,
-      group: order.group,
-      article_title: order.article_title,
+      groupTitle: i18n.groups[order.groupNbr].title,
+      articleTitle: i18n.articles[order.article_nbr].title,
       buttonsProps,
     };
 

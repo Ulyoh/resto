@@ -2,39 +2,55 @@ import React from 'react';
 import FilterCheckboxLine from './FilterCheckBoxLine';
 import i18n from '../../data/i18n';
 
-const MyHeaderCheckBoxList = ({ filter, handleCheckedBoxChange }) => (
+const MyHeaderCheckBoxList = ({ filter, handleCheckedBoxChange }) => {
+  let prelistNumber = 0;
+  let head = '';
 
-  <ul className="dropdown-menu" role="menu">
-    {/* for list of articles */}
-    {i18n.articles_related.map(article => (
-      <div key={article.list_name}>
-        <li className="dropdown-header" role="presentation">
-          {article.list_name}
-        </li>
-        {/* for each article */}
-        {article.articles_groups.map(group => (
+  return (
+
+    <ul className="dropdown-menu" role="menu">
+      {/* for list of groups */}
+      {Object.keys(i18n.groups).map((groupNbr) => {
+        const group = i18n.groups[groupNbr];
+        if (group.list_number !== prelistNumber) {
+          head = (
+            <div key={group.list_number}>
+              <li className="dropdown-header" role="presentation">
+                {i18n.lists[group.list_number].list_name}
+              </li>
+            </div>);
+            prelistNumber = group.list_number;
+        } else {
+          head = null;
+        }
+
+        return (
+          <div key={group.title}>
+            {head}
+            <FilterCheckboxLine
+              title={group.title}
+              hCBC={handleCheckedBoxChange}
+              groupNbr={group.groupNbr}
+              toShow={filter[group.groupNbr].show}
+            />
+          </div>
+        );
+      })
+      }
+      <li role="separator" className="divider" />
+      <li className="dropdown-header" role="presentation" />
+      {/* filtres by article served or not */}
+      {Object.keys(filter).map(groupNbr =>
+        (groupNbr >= 1000) &&
           <FilterCheckboxLine
-            key={group.title}
-            title={group.title}
+            key={filter[groupNbr].title}
+            title={filter[groupNbr].title}
             hCBC={handleCheckedBoxChange}
-            groupNbr={group.groupNbr}
-            toShow={filter[group.groupNbr].show}
-          />))}
-        {/* end for each article */}
-      </div>)) }
-    {/* end for list of articles */}
-    <li role="separator" className="divider" />
-    <li className="dropdown-header" role="presentation" />
-    {/* filtres by article served or not */}
-    {Object.keys(filter).map(groupNbr =>
-      (groupNbr >= 1000) && <FilterCheckboxLine
-        key={filter[groupNbr].title}
-        title={filter[groupNbr].title}
-        hCBC={handleCheckedBoxChange}
-        groupNbr={groupNbr}
-        toShow={filter[groupNbr].show}
-      />)}
-  </ul>
-);
+            groupNbr={groupNbr}
+            toShow={filter[groupNbr].show}
+          />)}
+    </ul>
+  );
+};
 
 export default MyHeaderCheckBoxList;
